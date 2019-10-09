@@ -11,6 +11,10 @@ import { ProductCategoryListComponent } from './product-management/lists/product
 import { ProductCategoryProductListComponent } from './product-management/lists/product-category-product-list.component';
 import { ProductListComponent } from './product-management/lists/product-list.component';
 import { OrderListComponent } from './order-management/lists/order-list.component';
+import { OrderFormComponent } from './order-management/forms/order-form.component';
+import { CustomerListComponent } from './customer-management/list/customer-list.component';
+import { CustomerFormComponent } from './customer-management/forms/customer-form.component';
+import { CustomerOrdersListComponent } from './order-management/lists/customer-orders-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -28,7 +32,12 @@ const routes: Routes = [
   { path: 'hive/:id/sections', component: HiveSectionListComponent },
   { path: 'hive/:hiveId/sections/:id', component: HiveSectionFormComponent },
   { path: 'hive/:hiveId/section', component: HiveSectionFormComponent },
-  { path: 'orders', component: OrderListComponent }
+  { path: 'orders', component: OrderListComponent },
+  { path: 'order', component: OrderFormComponent },
+  { path: 'customers', component: CustomerListComponent },
+  { path: 'customer/:id', component: CustomerFormComponent },
+  { path: 'customer', component: CustomerFormComponent },
+  { path: 'customers/:customerId/orders',component: CustomerOrdersListComponent }
 ];
 
 @NgModule({

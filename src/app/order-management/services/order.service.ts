@@ -15,4 +15,8 @@ export class OrderService {
   getOrders(): Observable<Array<OrderListItem>> {
     return this.http.get<Array<OrderListItem>>(this.url);
   }
+
+  // getOrdersByCustomerId(customerId: number): Observable<Array<OrderListItem>>
+  //   return this.http.get<<Array<OrderListItem>>>(this.url)
+  // }
 }
