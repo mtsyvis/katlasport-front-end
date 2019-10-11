@@ -3,8 +3,10 @@ export class OrderListItem {
         public id: number,
         public orderStatus: string,
         public totalCost: string,
-        public managerId: boolean,
+        public managerId: number,
         public description: string,
-        public customerId: number
+        public customerId: number,
+        public productAmount: number,
+        public productId: number
     ) { }
 }

@@ -8,7 +8,7 @@ import { OrderListItem } from '../models/order-list-item';
   providedIn: 'root'
 })
 export class OrderService {
-  private url = environment.apiUrl + 'api/orders/';
+  private url = environment.apiUrl + 'api/orders';
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +16,11 @@ export class OrderService {
     return this.http.get<Array<OrderListItem>>(this.url);
   }
 
-  // getOrdersByCustomerId(customerId: number): Observable<Array<OrderListItem>>
-  //   return this.http.get<<Array<OrderListItem>>>(this.url)
-  // }
+  getOrdersByCustomerId(customerId: number): Observable<Array<OrderListItem>> {
+    return this.http.get<Array<OrderListItem>>(`${this.url}/${customerId}/orders`);
+  }
+
+  addOrder(order: OrderListItem): Observable<OrderListItem> {
+    return this.http.post<OrderListItem>(this.url, order);
+  }
 }
