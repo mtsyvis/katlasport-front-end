@@ -20,7 +20,6 @@ import { ProductListComponent } from 'app/product-management/lists/product-list.
 import { ProductCategoryService } from 'app/product-management/services/product-category.service';
 import { ProductService } from 'app/product-management/services/product.service';
 import { OrderListComponent } from './order-management/lists/order-list.component';
-import { OrderFormComponent } from './order-management/forms/order-form.component';
 import { CustomerListComponent } from './customer-management/list/customer-list.component';
 import { CustomerFormComponent } from './customer-management/forms/customer-form.component';
 import { CustomerOrdersListComponent } from './order-management/lists/customer-orders-list.component';
@@ -42,7 +41,6 @@ import { OrderProductFormComponent } from './order-management/forms/order-produc
     HiveSectionFormComponent,
     HiveSectionListComponent,
     OrderListComponent,
-    OrderFormComponent,
     CustomerListComponent,
     CustomerFormComponent,
     CustomerOrdersListComponent,
