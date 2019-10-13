@@ -30,4 +30,7 @@ export class OrderProductsInfoListComponent implements OnInit {
     this.orderService.getProductsInfo(this.orderId).subscribe(o => this.products = o);
   }
 
+  navigateToBack(){
+    
+  }
 }

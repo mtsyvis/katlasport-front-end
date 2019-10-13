@@ -11,7 +11,7 @@ import { ProductService } from '../../product-management/services/product.servic
   styleUrls: ['./order-customer-form.component.css']
 })
 export class OrderCustomerFormComponent implements OnInit {
-  order = new OrderListItem(0, "", "", 0, "", 0, 0, 0);
+  order = new OrderListItem(0, "", "", 0, "", 0, 1, 0);
   products: ProductListItem[];
   customerId: number;
   selectedProductId: number;

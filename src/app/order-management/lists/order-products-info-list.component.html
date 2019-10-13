@@ -10,9 +10,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let product of products">
-          <th scope="row"></th>
+          <th scope="row">{{product.itemId}}</th>
           <td>{{product.productName}}</td>
-          <td>{{product.productAmount}}</td>
+          <td>{{product.amount}}</td>
           <td>{{product.productPrice}}</td>
           <td>
             <div class="btn-toolbar" role="toolbar" aria-label="Product action buttons">

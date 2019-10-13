@@ -1,8 +1,8 @@
 export class OrderProductListItem{
     constructor(
-        public productId: number,
+        public itemId: number,
         public productName: string,
-        public productAmount: number,
+        public amount: number,
         public productPrice: number
     ){}
 }

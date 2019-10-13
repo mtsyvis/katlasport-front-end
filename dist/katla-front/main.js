@@ -46,16 +46,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_management_lists_product_category_product_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./product-management/lists/product-category-product-list.component */ "./src/app/product-management/lists/product-category-product-list.component.ts");
 /* harmony import */ var _product_management_lists_product_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./product-management/lists/product-list.component */ "./src/app/product-management/lists/product-list.component.ts");
 /* harmony import */ var _order_management_lists_order_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./order-management/lists/order-list.component */ "./src/app/order-management/lists/order-list.component.ts");
-/* harmony import */ var _order_management_forms_order_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./order-management/forms/order-form.component */ "./src/app/order-management/forms/order-form.component.ts");
-/* harmony import */ var _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./customer-management/list/customer-list.component */ "./src/app/customer-management/list/customer-list.component.ts");
-/* harmony import */ var _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./customer-management/forms/customer-form.component */ "./src/app/customer-management/forms/customer-form.component.ts");
-/* harmony import */ var _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./order-management/lists/customer-orders-list.component */ "./src/app/order-management/lists/customer-orders-list.component.ts");
+/* harmony import */ var _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./customer-management/list/customer-list.component */ "./src/app/customer-management/list/customer-list.component.ts");
+/* harmony import */ var _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./customer-management/forms/customer-form.component */ "./src/app/customer-management/forms/customer-form.component.ts");
+/* harmony import */ var _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./order-management/lists/customer-orders-list.component */ "./src/app/order-management/lists/customer-orders-list.component.ts");
+/* harmony import */ var _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./order-management/forms/order-customer-form.component */ "./src/app/order-management/forms/order-customer-form.component.ts");
+/* harmony import */ var _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./order-management/lists/order-products-info-list.component */ "./src/app/order-management/lists/order-products-info-list.component.ts");
+/* harmony import */ var _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./order-management/forms/order-product-form.component */ "./src/app/order-management/forms/order-product-form.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -90,11 +94,13 @@ var routes = [
     { path: 'hive/:hiveId/sections/:id', component: _hive_management_forms_hive_section_form_component__WEBPACK_IMPORTED_MODULE_4__["HiveSectionFormComponent"] },
     { path: 'hive/:hiveId/section', component: _hive_management_forms_hive_section_form_component__WEBPACK_IMPORTED_MODULE_4__["HiveSectionFormComponent"] },
     { path: 'orders', component: _order_management_lists_order_list_component__WEBPACK_IMPORTED_MODULE_12__["OrderListComponent"] },
-    { path: 'order', component: _order_management_forms_order_form_component__WEBPACK_IMPORTED_MODULE_13__["OrderFormComponent"] },
-    { path: 'customers', component: _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_14__["CustomerListComponent"] },
-    { path: 'customer/:id', component: _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_15__["CustomerFormComponent"] },
-    { path: 'customer', component: _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_15__["CustomerFormComponent"] },
-    { path: 'customers/:customerId/orders', component: _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_16__["CustomerOrdersListComponent"] }
+    { path: 'customers', component: _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_13__["CustomerListComponent"] },
+    { path: 'customer/:id', component: _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_14__["CustomerFormComponent"] },
+    { path: 'customer', component: _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_14__["CustomerFormComponent"] },
+    { path: 'customers/:customerId/orders', component: _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_15__["CustomerOrdersListComponent"] },
+    { path: 'customers/:customerId/order', component: _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_16__["OrderCustomerFormComponent"] },
+    { path: 'orders/:orderId/products', component: _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_17__["OrderProductsInfoListComponent"] },
+    { path: 'orders/:orderId/product', component: _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__["OrderProductFormComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -202,16 +208,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var app_product_management_services_product_category_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! app/product-management/services/product-category.service */ "./src/app/product-management/services/product-category.service.ts");
 /* harmony import */ var app_product_management_services_product_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! app/product-management/services/product.service */ "./src/app/product-management/services/product.service.ts");
 /* harmony import */ var _order_management_lists_order_list_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./order-management/lists/order-list.component */ "./src/app/order-management/lists/order-list.component.ts");
-/* harmony import */ var _order_management_forms_order_form_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./order-management/forms/order-form.component */ "./src/app/order-management/forms/order-form.component.ts");
-/* harmony import */ var _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./customer-management/list/customer-list.component */ "./src/app/customer-management/list/customer-list.component.ts");
-/* harmony import */ var _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./customer-management/forms/customer-form.component */ "./src/app/customer-management/forms/customer-form.component.ts");
-/* harmony import */ var _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./order-management/lists/customer-orders-list.component */ "./src/app/order-management/lists/customer-orders-list.component.ts");
+/* harmony import */ var _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./customer-management/list/customer-list.component */ "./src/app/customer-management/list/customer-list.component.ts");
+/* harmony import */ var _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./customer-management/forms/customer-form.component */ "./src/app/customer-management/forms/customer-form.component.ts");
+/* harmony import */ var _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./order-management/lists/customer-orders-list.component */ "./src/app/order-management/lists/customer-orders-list.component.ts");
+/* harmony import */ var _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./order-management/forms/order-customer-form.component */ "./src/app/order-management/forms/order-customer-form.component.ts");
+/* harmony import */ var _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./order-management/lists/order-products-info-list.component */ "./src/app/order-management/lists/order-products-info-list.component.ts");
+/* harmony import */ var _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./order-management/forms/order-product-form.component */ "./src/app/order-management/forms/order-product-form.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -256,10 +266,12 @@ var AppModule = /** @class */ (function () {
                 app_hive_management_forms_hive_section_form_component__WEBPACK_IMPORTED_MODULE_8__["HiveSectionFormComponent"],
                 app_hive_management_lists_hive_section_list_component__WEBPACK_IMPORTED_MODULE_10__["HiveSectionListComponent"],
                 _order_management_lists_order_list_component__WEBPACK_IMPORTED_MODULE_21__["OrderListComponent"],
-                _order_management_forms_order_form_component__WEBPACK_IMPORTED_MODULE_22__["OrderFormComponent"],
-                _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_23__["CustomerListComponent"],
-                _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_24__["CustomerFormComponent"],
-                _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_25__["CustomerOrdersListComponent"],
+                _customer_management_list_customer_list_component__WEBPACK_IMPORTED_MODULE_22__["CustomerListComponent"],
+                _customer_management_forms_customer_form_component__WEBPACK_IMPORTED_MODULE_23__["CustomerFormComponent"],
+                _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_24__["CustomerOrdersListComponent"],
+                _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_25__["OrderCustomerFormComponent"],
+                _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_26__["OrderProductsInfoListComponent"],
+                _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_27__["OrderProductFormComponent"],
             ],
             imports: [
                 // Angular imports
@@ -410,7 +422,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Customer List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Address</th>\n      <th scope=\"col\">Phone</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let customer of customers\">\n        <th scope=\"row\">{{customer.id}}</th>\n        <td>{{customer.name}}</td>\n        <td>{{customer.address}}</td>\n        <td>{{customer.phone}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"Edit group\">\n              <button routerLink=\"/customer/{{customer.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\n            </div>\n\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View orders\">\n              <button routerLink=\"customers/{{customer.id}}/orders\" type=\"button\" class=\"btn btn-primary\">View orders</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"New group\">\n      <button routerLink=\"/customer\" type=\"button\" class=\"btn btn-primary\">New customer</button>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Customer List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Address</th>\n      <th scope=\"col\">Phone</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let customer of customers\">\n        <th scope=\"row\">{{customer.id}}</th>\n        <td>{{customer.name}}</td>\n        <td>{{customer.address}}</td>\n        <td>{{customer.phone}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"Edit group\">\n              <button routerLink=\"/customer/{{customer.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\n            </div>\n\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View orders\">\n              <button routerLink=\"{{customer.id}}/orders\" type=\"button\" class=\"btn btn-primary\">View orders</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"New group\">\n      <button routerLink=\"/customer\" type=\"button\" class=\"btn btn-primary\">New customer</button>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1202,10 +1214,10 @@ var MainPageComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/order-management/forms/order-form.component.css":
-/*!*****************************************************************!*\
-  !*** ./src/app/order-management/forms/order-form.component.css ***!
-  \*****************************************************************/
+/***/ "./src/app/order-management/forms/order-customer-form.component.css":
+/*!**************************************************************************!*\
+  !*** ./src/app/order-management/forms/order-customer-form.component.css ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1213,28 +1225,32 @@ module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/order-management/forms/order-form.component.html":
-/*!******************************************************************!*\
-  !*** ./src/app/order-management/forms/order-form.component.html ***!
-  \******************************************************************/
+/***/ "./src/app/order-management/forms/order-customer-form.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/order-management/forms/order-customer-form.component.html ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Hive Editor</h2>\n  <form (ngSubmit)=\"onSubmit()\" #hiveForm=\"ngForm\">\n    <div class=\"form-group\">\n      <label for=\"idLabel\">ID</label>\n      <input type=\"text\" class=\"form-control\" id=\"id\" aria-describedby=\"idLabel\" [(ngModel)]=\"hive.id\" name=\"id\"\n        #id=\"ngModel\" readonly>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"name\" id=\"nameLabel\">Hive Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"nameLabel\" minlength=\"4\" maxlength=\"60\"\n        required [(ngModel)]=\"hive.name\" name=\"name\" #name=\"ngModel\">\n      <div *ngIf=\"name.invalid && (name.dirty || name.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"name.errors.required\">Hive Name is required.</div>\n        <div *ngIf=\"name.errors.minlength\">Hive Name must be at least 4 characters long.</div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"code\" id=\"codeLabel\">Hive Code</label>\n      <input type=\"text\" class=\"form-control\" id=\"code\" aria-describedby=\"codeLabel\" minlength=\"5\" maxlength=\"5\"\n        required [(ngModel)]=\"hive.code\" name=\"code\" #code=\"ngModel\">\n      <div *ngIf=\"code.invalid && (code.dirty || code.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"code.errors.required\">Hive Code is required.</div>\n        <div *ngIf=\"code.errors.minlength\">Hive Code must be not less than 5.</div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"address\" id=\"addressLabel\">Hive Address</label>\n      <input type=\"text\" class=\"form-control\" id=\"adress\" aria-describedby=\"addressLabel\" maxlength=\"300\" required\n        [(ngModel)]=\"hive.address\" name=\"address\" #address=\"ngModel\">\n      <div *ngIf=\"address.invalid && (address.dirty || address.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"address.errors.required\">Hive Name is required.</div>\n      </div>\n    </div>\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"lastUpdated\" id=\"lastUpdatedLabel\">Last Update</label>\n      <input type=\"text\" class=\"form-control\" id=\"lastUpdated\" aria-describedby=\"lastUpdatedLabel\" required\n        [(ngModel)]=\"hive.lastUpdated\" name=\"lastUpdated\" #lastUpdated=\"ngModel\" readonly>\n    </div>\n\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Cancel group\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onCancel()\">Back</button>\n      </div>\n      <div class=\"btn-group mr-4\" role=\"group\" aria-label=\"Save group\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n      </div>\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"existed && !hive.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onDelete()\">Delete</button>\n      </div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"Purge group\" *ngIf=\"existed && hive.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onUndelete()\">Undelete</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=\"onPurge()\">Purge</button>\n      </div>\n    </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <h2>Order Creator</h2>\n  <form (ngSubmit)=\"onSubmit()\" #orderCreatorrForm=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label for=\"product\" id=\"productLabel\">Product</label>\n      <select class=\"custom-select\" [(ngModel)]=\"selectedProductId\" id=\"product\" aria-describedby=\"productLabel\"\n        #product=\"ngModel\" [ngModelOptions]=\"{standalone: true}\">\n        <option *ngFor=\"let product of products\" [ngValue]=\"product.id\">{{product.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"amount\" id=\"amountLabel\">Product Amount</label>\n      <input type=\"text\" class=\"form-control\" id=\"amount\" aria-describedby=\"amountLabel\" required\n        [(ngModel)]=\"order.productAmount\" name=\"amount\" #amount=\"ngModel\">\n      <div *ngIf=\"amount.invalid && (amount.dirty || amount.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"amount.errors.required\">Product Amount is required.</div>\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"description\" id=\"descriptionLabel\">Order Description</label>\n      <textarea class=\"form-control\" id=\"description\" aria-describedby=\"descriptionLabel\" rows=\"4\" maxlength=\"300\"\n        [(ngModel)]=\"order.description\" name=\"description\" #description=\"ngModel\">\n      </textarea>\n    </div>\n\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Cancel group\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onCancel()\">Back</button>\n      </div>\n      <div class=\"btn-group mr-4\" role=\"group\" aria-label=\"Save group\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n      </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/order-management/forms/order-form.component.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/order-management/forms/order-form.component.ts ***!
-  \****************************************************************/
-/*! exports provided: OrderFormComponent */
+/***/ "./src/app/order-management/forms/order-customer-form.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/order-management/forms/order-customer-form.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: OrderCustomerFormComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderFormComponent", function() { return OrderFormComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderCustomerFormComponent", function() { return OrderCustomerFormComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_order_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/order.service */ "./src/app/order-management/services/order.service.ts");
+/* harmony import */ var _models_order_list_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/order-list-item */ "./src/app/order-management/models/order-list-item.ts");
+/* harmony import */ var _product_management_services_product_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../product-management/services/product.service */ "./src/app/product-management/services/product.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1245,20 +1261,144 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var OrderFormComponent = /** @class */ (function () {
-    function OrderFormComponent() {
+
+
+
+
+var OrderCustomerFormComponent = /** @class */ (function () {
+    function OrderCustomerFormComponent(route, router, orderService, productService) {
+        this.route = route;
+        this.router = router;
+        this.orderService = orderService;
+        this.productService = productService;
+        this.order = new _models_order_list_item__WEBPACK_IMPORTED_MODULE_3__["OrderListItem"](0, "", "", 0, "", 0, 1, 0);
     }
-    OrderFormComponent.prototype.ngOnInit = function () {
+    OrderCustomerFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.productService.getProducts().subscribe(function (p) { return _this.products = p; });
+        this.route.params.subscribe(function (p) {
+            _this.customerId = p['customerId'];
+        });
+        this.order.customerId = this.customerId;
     };
-    OrderFormComponent = __decorate([
+    OrderCustomerFormComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.order.productId = this.selectedProductId;
+        this.orderService.addOrder(this.order).subscribe(function (o) { return _this.navigateToCustomerOrders(); });
+    };
+    OrderCustomerFormComponent.prototype.onCancel = function () {
+        this.navigateToCustomerOrders();
+    };
+    OrderCustomerFormComponent.prototype.navigateToCustomerOrders = function () {
+        this.router.navigateByUrl("/customers/" + this.customerId + "/orders");
+    };
+    OrderCustomerFormComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-order-form',
-            template: __webpack_require__(/*! ./order-form.component.html */ "./src/app/order-management/forms/order-form.component.html"),
-            styles: [__webpack_require__(/*! ./order-form.component.css */ "./src/app/order-management/forms/order-form.component.css")]
+            selector: 'app-order-customer-form',
+            template: __webpack_require__(/*! ./order-customer-form.component.html */ "./src/app/order-management/forms/order-customer-form.component.html"),
+            styles: [__webpack_require__(/*! ./order-customer-form.component.css */ "./src/app/order-management/forms/order-customer-form.component.css")]
         }),
-        __metadata("design:paramtypes", [])
-    ], OrderFormComponent);
-    return OrderFormComponent;
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_order_service__WEBPACK_IMPORTED_MODULE_2__["OrderService"],
+            _product_management_services_product_service__WEBPACK_IMPORTED_MODULE_4__["ProductService"]])
+    ], OrderCustomerFormComponent);
+    return OrderCustomerFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/order-management/forms/order-product-form.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/order-management/forms/order-product-form.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/order-management/forms/order-product-form.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/order-management/forms/order-product-form.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h2>Adding product to order</h2>\n  <form (ngSubmit)=\"onSubmit()\" #orderProductCreatorForm=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label for=\"product\" id=\"productLabel\">Product</label>\n      <select class=\"custom-select\" [(ngModel)]=\"selectedProductId\" id=\"product\" aria-describedby=\"productLabel\"\n        #product=\"ngModel\" [ngModelOptions]=\"{standalone: true}\">\n        <option *ngFor=\"let product of products\" [ngValue]=\"product.id\">{{product.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"amount\" id=\"amountLabel\">Product Amount</label>\n      <input type=\"text\" class=\"form-control\" id=\"amount\" aria-describedby=\"amountLabel\" required\n        [(ngModel)]=\"orderProduct.amount\" name=\"amount\" #amount=\"ngModel\">\n      <div *ngIf=\"amount.invalid && (amount.dirty || amount.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"amount.errors.required\">Product Amount is required.</div>\n      </div>\n    </div>\n\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Cancel group\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onCancel()\">Back</button>\n      </div>\n      <div class=\"btn-group mr-4\" role=\"group\" aria-label=\"Save group\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n      </div>\n    </div>\n  </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/order-management/forms/order-product-form.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/order-management/forms/order-product-form.component.ts ***!
+  \************************************************************************/
+/*! exports provided: OrderProductFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderProductFormComponent", function() { return OrderProductFormComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_order_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/order.service */ "./src/app/order-management/services/order.service.ts");
+/* harmony import */ var _models_order_product_list_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/order-product-list-item */ "./src/app/order-management/models/order-product-list-item.ts");
+/* harmony import */ var _product_management_services_product_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../product-management/services/product.service */ "./src/app/product-management/services/product.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var OrderProductFormComponent = /** @class */ (function () {
+    function OrderProductFormComponent(route, router, orderService, productService) {
+        this.route = route;
+        this.router = router;
+        this.orderService = orderService;
+        this.productService = productService;
+        this.orderProduct = new _models_order_product_list_item__WEBPACK_IMPORTED_MODULE_3__["OrderProductListItem"](0, "", 1, 0);
+    }
+    OrderProductFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.productService.getProducts().subscribe(function (p) { return _this.products = p; });
+        this.route.params.subscribe(function (p) {
+            _this.orderId = p['orderId'];
+        });
+    };
+    OrderProductFormComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.orderProduct.itemId = this.selectedProductId;
+        this.orderService.addProtuctToOrder(this.orderId, this.orderProduct).subscribe(function (o) { return _this.navigateToOrderProductList(); });
+    };
+    OrderProductFormComponent.prototype.onCancel = function () {
+        this.navigateToOrderProductList();
+    };
+    OrderProductFormComponent.prototype.navigateToOrderProductList = function () {
+        this.router.navigateByUrl("orders/" + this.orderId + "/products");
+    };
+    OrderProductFormComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-order-product-form',
+            template: __webpack_require__(/*! ./order-product-form.component.html */ "./src/app/order-management/forms/order-product-form.component.html"),
+            styles: [__webpack_require__(/*! ./order-product-form.component.css */ "./src/app/order-management/forms/order-product-form.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_order_service__WEBPACK_IMPORTED_MODULE_2__["OrderService"],
+            _product_management_services_product_service__WEBPACK_IMPORTED_MODULE_4__["ProductService"]])
+    ], OrderProductFormComponent);
+    return OrderProductFormComponent;
 }());
 
 
@@ -1283,7 +1423,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  customer-orders works!\n</p>\n"
+module.exports = "<div class=\"container\">\n  <h2>Customer Orders List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Status</th>\n      <th scope=\"col\">Description</th>\n      <th scope=\"col\">Total Cost</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let order of orders\">\n        <th scope=\"row\">{{order.id}}</th>\n        <td>{{order.orderStatus}}</td>\n        <td>{{order.description}}</td>\n        <td>{{order.totalCost}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\n              <button routerLink=\"/orders/{{order.id}}/products\" type=\"button\" class=\"btn btn-primary\">View products into order</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Back group\">\n      <button routerLink=\"/customers\" type=\"button\" class=\"btn btn-primary\">Back</button>\n    </div>\n    <div class=\"btn-group\" role=\"group\" aria-label=\"Add group\">\n      <button routerLink=\"/customers/{{customerId}}/order\" type=\"button\" class=\"btn btn-primary\">Add order</button>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1298,6 +1438,8 @@ module.exports = "<p>\n  customer-orders works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerOrdersListComponent", function() { return CustomerOrdersListComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_order_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/order.service */ "./src/app/order-management/services/order.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1308,10 +1450,23 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var CustomerOrdersListComponent = /** @class */ (function () {
-    function CustomerOrdersListComponent() {
+    function CustomerOrdersListComponent(route, router, orderService) {
+        this.route = route;
+        this.router = router;
+        this.orderService = orderService;
     }
     CustomerOrdersListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (p) {
+            _this.customerId = p['customerId'];
+        });
+        this.orderService.getOrdersByCustomerId(this.customerId).subscribe(function (o) { return _this.orders = o; });
+    };
+    CustomerOrdersListComponent.prototype.navigateToSections = function () {
+        this.router.navigateByUrl("customer/" + this.customerId + "/sections");
     };
     CustomerOrdersListComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1319,7 +1474,9 @@ var CustomerOrdersListComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./customer-orders-list.component.html */ "./src/app/order-management/lists/customer-orders-list.component.html"),
             styles: [__webpack_require__(/*! ./customer-orders-list.component.css */ "./src/app/order-management/lists/customer-orders-list.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_order_service__WEBPACK_IMPORTED_MODULE_2__["OrderService"]])
     ], CustomerOrdersListComponent);
     return CustomerOrdersListComponent;
 }());
@@ -1346,7 +1503,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Product List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Status</th>\n      <th scope=\"col\">Description</th>\n      <th scope=\"col\">Total Cost</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let order of orders\">\n        <th scope=\"row\">{{order.id}}</th>\n        <td>{{order.orderStatus}}</td>\n        <td>{{order.description}}</td>\n        <td>{{order.totalCost}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\">\n              <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\n            </div>\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\n              <button routerLink=\"/orders/{{order.id}}/products\" type=\"button\" class=\"btn btn-primary\">View category products</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Order List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Status</th>\n      <th scope=\"col\">Description</th>\n      <th scope=\"col\">Total Cost</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let order of orders\">\n        <th scope=\"row\">{{order.id}}</th>\n        <td>{{order.orderStatus}}</td>\n        <td>{{order.description}}</td>\n        <td>{{order.totalCost}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\">\n              <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\n            </div>\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\n              <button routerLink=\"/orders/{{order.id}}/products\" type=\"button\" class=\"btn btn-primary\">View category products</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -1402,6 +1559,138 @@ var OrderListComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/order-management/lists/order-products-info-list.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/order-management/lists/order-products-info-list.component.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/order-management/lists/order-products-info-list.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/order-management/lists/order-products-info-list.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <h2>Order Products List</h2>\r\n    <table class=\"table table-nofluid\">\r\n      <thead>\r\n        <th scope=\"col\">#</th>\r\n        <th scope=\"col\">Product Name</th>\r\n        <th scope=\"col\">Product Amount</th>\r\n        <th scope=\"col\">Product Price</th>\r\n        <th scope=\"col\"></th>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let product of products\">\r\n          <th scope=\"row\">{{product.itemId}}</th>\r\n          <td>{{product.productName}}</td>\r\n          <td>{{product.amount}}</td>\r\n          <td>{{product.productPrice}}</td>\r\n          <td>\r\n            <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\r\n              <!-- <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\">\r\n                <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\r\n              </div> -->\r\n              <!-- <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\r\n                <button routerLink=\"/orders/{{orderId}}/products\" type=\"button\" class=\"btn btn-primary\">View category products</button>\r\n              </div> -->\r\n            </div>\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\r\n        <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Back group\">\r\n          <button routerLink=\"/customers\" type=\"button\" class=\"btn btn-primary\">Back</button>\r\n        </div>\r\n        <div class=\"btn-group\" role=\"group\" aria-label=\"Add group\">\r\n          <button routerLink=\"/orders/{{orderId}}/product\" type=\"button\" class=\"btn btn-primary\">Add products to order</button>\r\n        </div>\r\n      </div>\r\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/order-management/lists/order-products-info-list.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/order-management/lists/order-products-info-list.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: OrderProductsInfoListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderProductsInfoListComponent", function() { return OrderProductsInfoListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_order_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/order.service */ "./src/app/order-management/services/order.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var OrderProductsInfoListComponent = /** @class */ (function () {
+    function OrderProductsInfoListComponent(route, router, orderService) {
+        this.route = route;
+        this.router = router;
+        this.orderService = orderService;
+    }
+    OrderProductsInfoListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (p) {
+            _this.orderId = p['orderId'];
+        });
+        //this.orderService.getOrder(this.orderId).subscribe(o => this.order = o);
+        this.orderService.getProductsInfo(this.orderId).subscribe(function (o) { return _this.products = o; });
+    };
+    OrderProductsInfoListComponent.prototype.navigateToBack = function () {
+    };
+    OrderProductsInfoListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-order-products-info-list',
+            template: __webpack_require__(/*! ./order-products-info-list.component.html */ "./src/app/order-management/lists/order-products-info-list.component.html"),
+            styles: [__webpack_require__(/*! ./order-products-info-list.component.css */ "./src/app/order-management/lists/order-products-info-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_order_service__WEBPACK_IMPORTED_MODULE_2__["OrderService"]])
+    ], OrderProductsInfoListComponent);
+    return OrderProductsInfoListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/order-management/models/order-list-item.ts":
+/*!************************************************************!*\
+  !*** ./src/app/order-management/models/order-list-item.ts ***!
+  \************************************************************/
+/*! exports provided: OrderListItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderListItem", function() { return OrderListItem; });
+var OrderListItem = /** @class */ (function () {
+    function OrderListItem(id, orderStatus, totalCost, managerId, description, customerId, productAmount, productId) {
+        this.id = id;
+        this.orderStatus = orderStatus;
+        this.totalCost = totalCost;
+        this.managerId = managerId;
+        this.description = description;
+        this.customerId = customerId;
+        this.productAmount = productAmount;
+        this.productId = productId;
+    }
+    return OrderListItem;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/order-management/models/order-product-list-item.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/order-management/models/order-product-list-item.ts ***!
+  \********************************************************************/
+/*! exports provided: OrderProductListItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderProductListItem", function() { return OrderProductListItem; });
+var OrderProductListItem = /** @class */ (function () {
+    function OrderProductListItem(itemId, productName, amount, productPrice) {
+        this.itemId = itemId;
+        this.productName = productName;
+        this.amount = amount;
+        this.productPrice = productPrice;
+    }
+    return OrderProductListItem;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/order-management/services/order.service.ts":
 /*!************************************************************!*\
   !*** ./src/app/order-management/services/order.service.ts ***!
@@ -1430,10 +1719,25 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var OrderService = /** @class */ (function () {
     function OrderService(http) {
         this.http = http;
-        this.url = environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'api/orders/';
+        this.url = environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'api/orders';
     }
     OrderService.prototype.getOrders = function () {
         return this.http.get(this.url);
+    };
+    OrderService.prototype.getOrdersByCustomerId = function (customerId) {
+        return this.http.get(this.url + "/" + customerId + "/orders");
+    };
+    OrderService.prototype.addOrder = function (order) {
+        return this.http.post(this.url, order);
+    };
+    OrderService.prototype.getProductsInfo = function (orderId) {
+        return this.http.get(this.url + "/" + orderId + "/products");
+    };
+    OrderService.prototype.getOrder = function (orderId) {
+        return this.http.get(this.url + "/" + orderId);
+    };
+    OrderService.prototype.addProtuctToOrder = function (orderId, productItem) {
+        return this.http.put(this.url + "/" + orderId, productItem);
     };
     OrderService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
