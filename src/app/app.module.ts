@@ -25,6 +25,8 @@ import { CustomerListComponent } from './customer-management/list/customer-list.
 import { CustomerFormComponent } from './customer-management/forms/customer-form.component';
 import { CustomerOrdersListComponent } from './order-management/lists/customer-orders-list.component';
 import { OrderCustomerFormComponent } from './order-management/forms/order-customer-form.component';
+import { OrderProductsInfoListComponent } from './order-management/lists/order-products-info-list.component';
+import { OrderProductFormComponent } from './order-management/forms/order-product-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { OrderCustomerFormComponent } from './order-management/forms/order-custo
     CustomerFormComponent,
     CustomerOrdersListComponent,
     OrderCustomerFormComponent,
+    OrderProductsInfoListComponent,
+    OrderProductFormComponent,
   ],
   imports: [
     // Angular imports

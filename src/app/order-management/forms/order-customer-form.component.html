@@ -2,7 +2,6 @@
   <h2>Order Creator</h2>
   <form (ngSubmit)="onSubmit()" #orderCreatorrForm="ngForm">
 
-
     <div class="form-group">
       <label for="product" id="productLabel">Product</label>
       <select class="custom-select" [(ngModel)]="selectedProductId" id="product" aria-describedby="productLabel"
@@ -10,8 +9,6 @@
         <option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}</option>
       </select>
     </div>
-
-
 
     <div class="form-group">
       <label for="amount" id="amountLabel">Product Amount</label>
