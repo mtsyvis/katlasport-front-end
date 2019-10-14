@@ -10,8 +10,10 @@ import { Manager } from '../models/manager';
 })
 export class ManagerFormComponent implements OnInit {
   existed = false;
+  bossManagers: Manager[];
   manager = new Manager(0, "", "", 0, false, "");
   selectedImageFile: File;
+  curentManagerId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,19 +22,20 @@ export class ManagerFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.managerService.getBossMamagers().subscribe(m => this.bossManagers = m);
     this.route.params.subscribe(p => {
-      if (p['id'] === undefined) return;
+      if (p['id'] === undefined)
+        return;
+
       this.managerService.getManager(p['id']).subscribe(h => this.manager = h);
-      this.existed = true;
     });
+    this.existed = true;
+    this.curentManagerId = this.bossManagers.findIndex(m => m.id == this.manager.id);
+    this.bossManagers.splice(this.curentManagerId);
   }
 
-  onFileSelected(event){
+  onFileSelected(event) {
     this.selectedImageFile = event.target.files[0];
-  }
-
-  onUpload(){
-    
   }
 
   navigateToManagers() {
@@ -46,7 +49,7 @@ export class ManagerFormComponent implements OnInit {
   onSubmit() {
     if (this.existed) {
       this.managerService.updateManager(this.manager);
-      if(this.selectedImageFile){
+      if (this.selectedImageFile) {
         this.managerService.uploadNewImageFile(this.manager.id, this.selectedImageFile).subscribe(h => this.navigateToManagers());
       }
     } else {
@@ -62,7 +65,7 @@ export class ManagerFormComponent implements OnInit {
 
   onUndelete() {
     if (this.manager) {
-      this.managerService .setManagerStatus(this.manager.id, false).subscribe(c => this.manager.isDeleted = false);
+      this.managerService.setManagerStatus(this.manager.id, false).subscribe(c => this.manager.isDeleted = false);
     }
   }
 

@@ -28,6 +28,7 @@ import { OrderProductsInfoListComponent } from './order-management/lists/order-p
 import { OrderProductFormComponent } from './order-management/forms/order-product-form.component';
 import { ManagerListComponent } from './manager-control/lists/manager-list.component';
 import { ManagerFormComponent } from './manager-control/forms/manager-form.component';
+import { ManagerSubordinatesListComponent } from './manager-control/lists/manager-subordinates-list.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ManagerFormComponent } from './manager-control/forms/manager-form.compo
     OrderProductFormComponent,
     ManagerListComponent,
     ManagerFormComponent,
+    ManagerSubordinatesListComponent,
   ],
   imports: [
     // Angular imports

@@ -17,6 +17,10 @@ export class ManagerService {
     return this.http.get<Array<ManagerListItem>>(this.url);
   }
 
+  getBossMamagers(): Observable<Array<Manager>> {
+    return this.http.get<Array<Manager>>(this.url);
+  }
+
   getManager(managerId: number): Observable<Manager> {
     return this.http.get<Manager>(`${this.url}/${managerId}`);
   }
@@ -41,5 +45,9 @@ export class ManagerService {
     const fd = new FormData();
     fd.append('image', file, file.name);
     return this.http.post<Object>(`${this.url}/${managerId}/uploadImage`, fd);
+  }
+
+  getManagerSubordinates(managerId:number):Observable<Array<ManagerListItem>>{
+    return this.http.get<Array<ManagerListItem>>(`${this.url}/${managerId}/subordinates`);
   }
 }

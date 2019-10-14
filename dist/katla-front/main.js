@@ -52,12 +52,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./order-management/forms/order-customer-form.component */ "./src/app/order-management/forms/order-customer-form.component.ts");
 /* harmony import */ var _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./order-management/lists/order-products-info-list.component */ "./src/app/order-management/lists/order-products-info-list.component.ts");
 /* harmony import */ var _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./order-management/forms/order-product-form.component */ "./src/app/order-management/forms/order-product-form.component.ts");
+/* harmony import */ var _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./manager-control/lists/manager-list.component */ "./src/app/manager-control/lists/manager-list.component.ts");
+/* harmony import */ var _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./manager-control/forms/manager-form.component */ "./src/app/manager-control/forms/manager-form.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -100,7 +104,10 @@ var routes = [
     { path: 'customers/:customerId/orders', component: _order_management_lists_customer_orders_list_component__WEBPACK_IMPORTED_MODULE_15__["CustomerOrdersListComponent"] },
     { path: 'customers/:customerId/order', component: _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_16__["OrderCustomerFormComponent"] },
     { path: 'orders/:orderId/products', component: _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_17__["OrderProductsInfoListComponent"] },
-    { path: 'orders/:orderId/product', component: _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__["OrderProductFormComponent"] }
+    { path: 'orders/:orderId/product', component: _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__["OrderProductFormComponent"] },
+    { path: 'managers', component: _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_19__["ManagerListComponent"] },
+    { path: 'manager', component: _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__["ManagerFormComponent"] },
+    { path: 'manager/:id', component: _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__["ManagerFormComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -136,7 +143,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark justify-content-between\">\r\n  <div>\r\n    <a class=\"navbar-brand\" routerLink=\"/main\">\r\n      <span style=\"color: yellow; font-weight: bold; font-family: Arial, Helvetica, sans-serif; margin-right:0.1em; border: yellow solid 1px; padding: 6px;\">K</span>\r\n      <span style=\"margin-left: 5px;\">KatlaSport</span>\r\n    </a>\r\n  </div>\r\n  <div class=\"collapse navbar-collapse\" style=\"margin-left: 100px; margin-bottom: 2px;\" id=\"navbarNavDropdown\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/categories\">Categories</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/products\">Products</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/hives\">Hives</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/orders\">Orders</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/customers\">Customers</a>\r\n      </li>\r\n      <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Product Management</a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n          <a class=\"dropdown-item\" href=\"#\">Categories</a>\r\n          <a class=\"dropdown-item\" href=\"#\">Products</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <form class=\"form-inline\">\r\n    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n    <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n  </form>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark justify-content-between\">\r\n  <div>\r\n    <a class=\"navbar-brand\" routerLink=\"/main\">\r\n      <span style=\"color: yellow; font-weight: bold; font-family: Arial, Helvetica, sans-serif; margin-right:0.1em; border: yellow solid 1px; padding: 6px;\">K</span>\r\n      <span style=\"margin-left: 5px;\">KatlaSport</span>\r\n    </a>\r\n  </div>\r\n  <div class=\"collapse navbar-collapse\" style=\"margin-left: 100px; margin-bottom: 2px;\" id=\"navbarNavDropdown\">\r\n    <ul class=\"navbar-nav\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/categories\">Categories</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/products\">Products</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/hives\">Hives</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/orders\">Orders</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/customers\">Customers</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"/managers\">Managers</a>\r\n      </li>\r\n      <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Product Management</a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n          <a class=\"dropdown-item\" href=\"#\">Categories</a>\r\n          <a class=\"dropdown-item\" href=\"#\">Products</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <form class=\"form-inline\">\r\n    <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n    <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n  </form>\r\n</nav>\r\n<router-outlet></router-outlet>\r\n\r\n"
 
 /***/ }),
 
@@ -214,12 +221,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./order-management/forms/order-customer-form.component */ "./src/app/order-management/forms/order-customer-form.component.ts");
 /* harmony import */ var _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./order-management/lists/order-products-info-list.component */ "./src/app/order-management/lists/order-products-info-list.component.ts");
 /* harmony import */ var _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./order-management/forms/order-product-form.component */ "./src/app/order-management/forms/order-product-form.component.ts");
+/* harmony import */ var _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./manager-control/lists/manager-list.component */ "./src/app/manager-control/lists/manager-list.component.ts");
+/* harmony import */ var _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./manager-control/forms/manager-form.component */ "./src/app/manager-control/forms/manager-form.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -272,6 +283,8 @@ var AppModule = /** @class */ (function () {
                 _order_management_forms_order_customer_form_component__WEBPACK_IMPORTED_MODULE_25__["OrderCustomerFormComponent"],
                 _order_management_lists_order_products_info_list_component__WEBPACK_IMPORTED_MODULE_26__["OrderProductsInfoListComponent"],
                 _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_27__["OrderProductFormComponent"],
+                _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_28__["ManagerListComponent"],
+                _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_29__["ManagerFormComponent"],
             ],
             imports: [
                 // Angular imports
@@ -1214,6 +1227,306 @@ var MainPageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/manager-control/forms/manager-form.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/manager-control/forms/manager-form.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/manager-control/forms/manager-form.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/manager-control/forms/manager-form.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h2>Manager Editor</h2>\n  <form (ngSubmit)=\"onSubmit()\" #managerForm=\"ngForm\">\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"idLabel\">ID</label>\n      <input type=\"text\" class=\"form-control\" id=\"id\" aria-describedby=\"idLabel\" [(ngModel)]=\"manager.id\" name=\"id\"\n        #id=\"ngModel\" readonly>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"name\" id=\"nameLabel\">Manager Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"nameLabel\" minlength=\"4\" maxlength=\"60\"\n        required [(ngModel)]=\"manager.name\" name=\"name\" #name=\"ngModel\">\n      <div *ngIf=\"name.invalid && (name.dirty || name.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"name.errors.required\">Manager Name is required.</div>\n        <div *ngIf=\"name.errors.minlength\">Manager Name must be at least 4 characters long.</div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"phone\" id=\"phoneLabel\">Manager Phone</label>\n      <input type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phoneLabel\" maxlength=\"12\" required\n        [(ngModel)]=\"manager.phone\" name=\"phone\" #phone=\"ngModel\">\n      <div *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"phone.errors.required\">Manager Phone is required.</div>\n      </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"image\" id=\"imageLabel\">Image</label>\n      <input type=\"file\" (change)=\"onFileSelected($event)\" class=\"form-control\" id=\"image\"\n        aria-describedby=\"imageLabel\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"bossManager\" id=\"bossManagerLabel\">Boss Manager</label>\n      <select class=\"custom-select\" [(ngModel)]=\"selectedBossManagerId\" id=\"bossManager\" aria-describedby=\"bossManagerLabel\"\n        #product=\"ngModel\" [ngModelOptions]=\"{standalone: true}\">\n        <option *ngFor=\"let bossManager of bossManagers\" [ngValue]=\"bossManager.id\">{{bossManager.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Cancel group\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onCancel()\">Back</button>\n      </div>\n      <div class=\"btn-group mr-4\" role=\"group\" aria-label=\"Save group\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n      </div>\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"existed && !manager.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onDelete()\">Delete</button>\n      </div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"Purge group\" *ngIf=\"existed && manager.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onUndelete()\">Undelete</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=\"onPurge()\">Purge</button>\n      </div>\n    </div>\n  </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/manager-control/forms/manager-form.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/manager-control/forms/manager-form.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: ManagerFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagerFormComponent", function() { return ManagerFormComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_manager_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/manager.service */ "./src/app/manager-control/services/manager.service.ts");
+/* harmony import */ var _models_manager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/manager */ "./src/app/manager-control/models/manager.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var ManagerFormComponent = /** @class */ (function () {
+    function ManagerFormComponent(route, router, managerService) {
+        this.route = route;
+        this.router = router;
+        this.managerService = managerService;
+        this.existed = false;
+        this.manager = new _models_manager__WEBPACK_IMPORTED_MODULE_3__["Manager"](0, "", "", 0, false, "");
+    }
+    ManagerFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.managerService.getBossMamagers().subscribe(function (m) { return _this.bossManagers = m; });
+        this.route.params.subscribe(function (p) {
+            if (p['id'] === undefined)
+                return;
+            _this.managerService.getManager(p['id']).subscribe(function (h) { return _this.manager = h; });
+        });
+        this.existed = true;
+        this.curentManagerId = this.bossManagers.indexOf(this.manager);
+        this.bossManagers.splice(this.curentManagerId);
+    };
+    ManagerFormComponent.prototype.onFileSelected = function (event) {
+        this.selectedImageFile = event.target.files[0];
+    };
+    ManagerFormComponent.prototype.navigateToManagers = function () {
+        this.router.navigate(['/managers']);
+    };
+    ManagerFormComponent.prototype.onCancel = function () {
+        this.navigateToManagers();
+    };
+    ManagerFormComponent.prototype.onSubmit = function () {
+        var _this = this;
+        if (this.existed) {
+            this.managerService.updateManager(this.manager);
+            if (this.selectedImageFile) {
+                this.managerService.uploadNewImageFile(this.manager.id, this.selectedImageFile).subscribe(function (h) { return _this.navigateToManagers(); });
+            }
+        }
+        else {
+            this.managerService.addManager(this.manager).subscribe(function (h) { return _this.navigateToManagers(); });
+        }
+    };
+    ManagerFormComponent.prototype.onDelete = function () {
+        var _this = this;
+        if (this.manager) {
+            this.managerService.setManagerStatus(this.manager.id, true).subscribe(function (c) { return _this.manager.isDeleted = true; });
+        }
+    };
+    ManagerFormComponent.prototype.onUndelete = function () {
+        var _this = this;
+        if (this.manager) {
+            this.managerService.setManagerStatus(this.manager.id, false).subscribe(function (c) { return _this.manager.isDeleted = false; });
+        }
+    };
+    ManagerFormComponent.prototype.onPurge = function () {
+        var _this = this;
+        if (this.manager) {
+            this.managerService.deleteManager(this.manager.id).subscribe(function (h) { return _this.navigateToManagers(); });
+        }
+    };
+    ManagerFormComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-manager-form-component',
+            template: __webpack_require__(/*! ./manager-form.component.html */ "./src/app/manager-control/forms/manager-form.component.html"),
+            styles: [__webpack_require__(/*! ./manager-form.component.css */ "./src/app/manager-control/forms/manager-form.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_manager_service__WEBPACK_IMPORTED_MODULE_2__["ManagerService"]])
+    ], ManagerFormComponent);
+    return ManagerFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/manager-control/lists/manager-list.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/manager-control/lists/manager-list.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "img{\r\n    width: 200px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/manager-control/lists/manager-list.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/manager-control/lists/manager-list.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h2>Manager List</h2>\n  <table class=\"table table-nonfluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Phone</th>\n      <th scope=\"col\">Image</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let manager of managers\">\n        <th scope=\"row\">{{manager.id}}</th>\n        <th scope=\"row\">{{manager.name}}</th>\n        <th scope=\"row\">{{manager.phone}}</th>\n        <th scope=\"row\"><img src= \"{{manager.photoUrl}}\" alt=\"photo\"></th>\n        <td>\n          <span class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Hive action buttons\"\n            style=\"display: block; white-space:nowrap;\">\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"!manager.isDeleted\"\n              (click)=\"onDelete(manager.id)\">\n              <button type=\"button\" class=\"btn btn-danger\">Delete</button>\n            </div>\n            <div *ngIf=\"manager.isDeleted\" class=\"btn-group mr-2\" role=\"group\" aria-label=\"Edit group\"\n              (click)=\"onRestore(manager.id)\">\n              <button type=\"button\" class=\"btn btn-primary\">Restore</button>\n            </div>\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"View group\">\n              <button routerLink=\"/managers\" type=\"button\" class=\"btn btn-primary\">View\n                sections</button>\n            </div>\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Edit group\">\n              <button routerLink=\"/manager/{{manager.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\n            </div>\n          </span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"New group\">\n      <button routerLink=\"/manager\" type=\"button\" class=\"btn btn-primary\">New Manager</button>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/manager-control/lists/manager-list.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/manager-control/lists/manager-list.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: ManagerListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagerListComponent", function() { return ManagerListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_manager_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/manager.service */ "./src/app/manager-control/services/manager.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ManagerListComponent = /** @class */ (function () {
+    function ManagerListComponent(managerService) {
+        this.managerService = managerService;
+    }
+    ManagerListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.managerService.getMamagers().subscribe(function (m) { return _this.managers = m; });
+    };
+    ManagerListComponent.prototype.onDelete = function (managerId) {
+        var manager = this.managers.find(function (h) { return h.id == managerId; });
+        if (manager) {
+            this.managerService.setManagerStatus(managerId, true).subscribe(function (c) { return manager.isDeleted = true; });
+        }
+    };
+    ManagerListComponent.prototype.onRestore = function (managerId) {
+        var manager = this.managers.find(function (h) { return h.id == managerId; });
+        if (manager) {
+            this.managerService.setManagerStatus(managerId, true).subscribe(function (c) { return manager.isDeleted = false; });
+        }
+    };
+    ManagerListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-manager-list',
+            template: __webpack_require__(/*! ./manager-list.component.html */ "./src/app/manager-control/lists/manager-list.component.html"),
+            styles: [__webpack_require__(/*! ./manager-list.component.css */ "./src/app/manager-control/lists/manager-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_manager_service__WEBPACK_IMPORTED_MODULE_1__["ManagerService"]])
+    ], ManagerListComponent);
+    return ManagerListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/manager-control/models/manager.ts":
+/*!***************************************************!*\
+  !*** ./src/app/manager-control/models/manager.ts ***!
+  \***************************************************/
+/*! exports provided: Manager */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Manager", function() { return Manager; });
+var Manager = /** @class */ (function () {
+    function Manager(id, phone, name, parentId, isDeleted, photoUrl) {
+        this.id = id;
+        this.phone = phone;
+        this.name = name;
+        this.parentId = parentId;
+        this.isDeleted = isDeleted;
+        this.photoUrl = photoUrl;
+    }
+    return Manager;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/manager-control/services/manager.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/manager-control/services/manager.service.ts ***!
+  \*************************************************************/
+/*! exports provided: ManagerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagerService", function() { return ManagerService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ManagerService = /** @class */ (function () {
+    function ManagerService(http) {
+        this.http = http;
+        this.url = environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'api/managers';
+    }
+    ManagerService.prototype.getMamagers = function () {
+        return this.http.get(this.url);
+    };
+    ManagerService.prototype.getBossMamagers = function () {
+        return this.http.get(this.url);
+    };
+    ManagerService.prototype.getManager = function (managerId) {
+        return this.http.get(this.url + "/" + managerId);
+    };
+    ManagerService.prototype.addManager = function (manager) {
+        return this.http.post("" + this.url, manager);
+    };
+    ManagerService.prototype.updateManager = function (manager) {
+        return this.http.put(this.url + "/" + manager.id, manager);
+    };
+    ManagerService.prototype.deleteManager = function (managerId) {
+        return this.http.delete(this.url + "/" + managerId);
+    };
+    ManagerService.prototype.setManagerStatus = function (managerId, deletedStatus) {
+        return this.http.put(this.url + "/" + managerId + "/status/" + deletedStatus, null);
+    };
+    ManagerService.prototype.uploadNewImageFile = function (managerId, file) {
+        var fd = new FormData();
+        fd.append('image', file, file.name);
+        return this.http.post(this.url + "/" + managerId + "/uploadImage", fd);
+    };
+    ManagerService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], ManagerService);
+    return ManagerService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/order-management/forms/order-customer-form.component.css":
 /*!**************************************************************************!*\
   !*** ./src/app/order-management/forms/order-customer-form.component.css ***!
@@ -1503,7 +1816,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Order List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Status</th>\n      <th scope=\"col\">Description</th>\n      <th scope=\"col\">Total Cost</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let order of orders\">\n        <th scope=\"row\">{{order.id}}</th>\n        <td>{{order.orderStatus}}</td>\n        <td>{{order.description}}</td>\n        <td>{{order.totalCost}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\">\n              <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\n            </div>\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\n              <button routerLink=\"/orders/{{order.id}}/products\" type=\"button\" class=\"btn btn-primary\">View category products</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Order List</h2>\n  <table class=\"table table-nofluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Status</th>\n      <th scope=\"col\">Description</th>\n      <th scope=\"col\">Total Cost</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let order of orders\">\n        <th scope=\"row\">{{order.id}}</th>\n        <td>{{order.orderStatus}}</td>\n        <td>{{order.description}}</td>\n        <td>{{order.totalCost}}</td>\n        <td>\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\n            <!-- <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\">\n              <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\n            </div> -->\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\n              <button routerLink=\"/orders/{{order.id}}/products\" type=\"button\" class=\"btn btn-primary\">View products in order</button>\n            </div>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 

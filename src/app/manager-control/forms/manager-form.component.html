@@ -28,7 +28,14 @@
       <label for="image" id="imageLabel">Image</label>
       <input type="file" (change)="onFileSelected($event)" class="form-control" id="image"
         aria-describedby="imageLabel">
-      <!-- required [(ngModel)]="selectedImageFile" name="image" #image="ngModel" readonly> -->
+    </div>
+
+    <div class="form-group">
+      <label for="bossManager" id="bossManagerLabel">Boss Manager</label>
+      <select class="custom-select" [(ngModel)]="selectedBossManagerId" id="bossManager" aria-describedby="bossManagerLabel"
+        #product="ngModel" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let bossManager of bossManagers" [ngValue]="bossManager.id">{{bossManager.name}}</option>
+      </select>
     </div>
 
     <div class="btn-toolbar" role="toolbar" aria-label="Action buttons">
