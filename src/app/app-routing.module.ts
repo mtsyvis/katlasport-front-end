@@ -18,7 +18,7 @@ import { OrderCustomerFormComponent } from './order-management/forms/order-custo
 import { OrderProductsInfoListComponent } from './order-management/lists/order-products-info-list.component';
 import { OrderProductFormComponent } from './order-management/forms/order-product-form.component';
 import { ManagerListComponent } from './manager-control/lists/manager-list.component';
-import { ManagerFormComponent} from './manager-control/forms/manager-form.component';
+import { ManagerFormComponent } from './manager-control/forms/manager-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -45,7 +45,8 @@ const routes: Routes = [
   { path: 'orders/:orderId/products', component: OrderProductsInfoListComponent },
   { path: 'orders/:orderId/product', component: OrderProductFormComponent },
   { path: 'managers', component: ManagerListComponent },
-  { path: 'manager', component: ManagerFormComponent }
+  { path: 'manager', component: ManagerFormComponent },
+  { path: 'manager/:id', component: ManagerFormComponent }
 ];
 
 @NgModule({

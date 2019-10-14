@@ -26,14 +26,20 @@ export class ManagerService {
   }
 
   updateManager(manager: Manager): Observable<Object> {
-    return this.http.put<Object>(`${this.url}${manager.id}`, manager);
+    return this.http.put<Object>(`${this.url}/${manager.id}`, manager);
   }
 
   deleteManager(managerId: number): Observable<Object> {
-    return this.http.delete<Object>(`${this.url}${managerId}`);
+    return this.http.delete<Object>(`${this.url}/${managerId}`);
   }
 
   setManagerStatus(managerId: number, deletedStatus: boolean): Observable<Object> {
-    return this.http.put<Object>(`${this.url}${managerId}/status/${deletedStatus}`, null);
+    return this.http.put<Object>(`${this.url}/${managerId}/status/${deletedStatus}`, null);
+  }
+
+  uploadNewImageFile(managerId: number, file: File) {
+    const fd = new FormData();
+    fd.append('image', file, file.name);
+    return this.http.post<Object>(`${this.url}/${managerId}/uploadImage`, fd);
   }
 }
