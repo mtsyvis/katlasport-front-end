@@ -14,6 +14,7 @@ export class ManagerFormComponent implements OnInit {
   manager = new Manager(0, "", "", 0, false, "");
   selectedImageFile: File;
   curentManagerId: number;
+  selectedBossId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,16 +27,19 @@ export class ManagerFormComponent implements OnInit {
     this.route.params.subscribe(p => {
       if (p['id'] === undefined)
         return;
-
+      this.existed = true;
       this.managerService.getManager(p['id']).subscribe(h => this.manager = h);
     });
-    this.existed = true;
-    this.curentManagerId = this.bossManagers.findIndex(m => m.id == this.manager.id);
-    this.bossManagers.splice(this.curentManagerId);
+    //this.deleteCurrentManager();
   }
 
   onFileSelected(event) {
     this.selectedImageFile = event.target.files[0];
+  }
+
+  deleteCurrentManager() {
+    this.curentManagerId = this.bossManagers.findIndex(m => m.id == this.manager.id);
+    this.bossManagers.splice(this.curentManagerId);
   }
 
   navigateToManagers() {
@@ -47,11 +51,17 @@ export class ManagerFormComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.selectedBossId) {
+      this.manager.parentId = this.selectedBossId;
+    }
+
     if (this.existed) {
-      this.managerService.updateManager(this.manager);
       if (this.selectedImageFile) {
-        this.managerService.uploadNewImageFile(this.manager.id, this.selectedImageFile).subscribe(h => this.navigateToManagers());
+        this.managerService.uploadNewImageFile(this.manager.id, this.selectedImageFile).subscribe();
       }
+      this.managerService.updateManager(this.manager).
+        subscribe(s => this.navigateToManagers());
+
     } else {
       this.managerService.addManager(this.manager).subscribe(h => this.navigateToManagers());
     }

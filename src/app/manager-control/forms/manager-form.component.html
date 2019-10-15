@@ -32,8 +32,8 @@
 
     <div class="form-group">
       <label for="bossManager" id="bossManagerLabel">Boss Manager</label>
-      <select class="custom-select" [(ngModel)]="selectedBossManagerId" id="bossManager" aria-describedby="bossManagerLabel"
-        #product="ngModel" [ngModelOptions]="{standalone: true}">
+      <select class="custom-select" [(ngModel)]="selectedBossId" id="bossManager" aria-describedby="bossManagerLabel"
+        #bossManager="ngModel" [ngModelOptions]="{standalone: true}">
         <option *ngFor="let bossManager of bossManagers" [ngValue]="bossManager.id">{{bossManager.name}}</option>
       </select>
     </div>
