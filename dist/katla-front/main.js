@@ -54,12 +54,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./order-management/forms/order-product-form.component */ "./src/app/order-management/forms/order-product-form.component.ts");
 /* harmony import */ var _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./manager-control/lists/manager-list.component */ "./src/app/manager-control/lists/manager-list.component.ts");
 /* harmony import */ var _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./manager-control/forms/manager-form.component */ "./src/app/manager-control/forms/manager-form.component.ts");
+/* harmony import */ var _manager_control_lists_manager_subordinates_list_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./manager-control/lists/manager-subordinates-list.component */ "./src/app/manager-control/lists/manager-subordinates-list.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -107,7 +109,8 @@ var routes = [
     { path: 'orders/:orderId/product', component: _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_18__["OrderProductFormComponent"] },
     { path: 'managers', component: _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_19__["ManagerListComponent"] },
     { path: 'manager', component: _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__["ManagerFormComponent"] },
-    { path: 'manager/:id', component: _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__["ManagerFormComponent"] }
+    { path: 'manager/:id', component: _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_20__["ManagerFormComponent"] },
+    { path: 'manager/:id/subordinates', component: _manager_control_lists_manager_subordinates_list_component__WEBPACK_IMPORTED_MODULE_21__["ManagerSubordinatesListComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -223,12 +226,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./order-management/forms/order-product-form.component */ "./src/app/order-management/forms/order-product-form.component.ts");
 /* harmony import */ var _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./manager-control/lists/manager-list.component */ "./src/app/manager-control/lists/manager-list.component.ts");
 /* harmony import */ var _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./manager-control/forms/manager-form.component */ "./src/app/manager-control/forms/manager-form.component.ts");
+/* harmony import */ var _manager_control_lists_manager_subordinates_list_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./manager-control/lists/manager-subordinates-list.component */ "./src/app/manager-control/lists/manager-subordinates-list.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -285,6 +290,7 @@ var AppModule = /** @class */ (function () {
                 _order_management_forms_order_product_form_component__WEBPACK_IMPORTED_MODULE_27__["OrderProductFormComponent"],
                 _manager_control_lists_manager_list_component__WEBPACK_IMPORTED_MODULE_28__["ManagerListComponent"],
                 _manager_control_forms_manager_form_component__WEBPACK_IMPORTED_MODULE_29__["ManagerFormComponent"],
+                _manager_control_lists_manager_subordinates_list_component__WEBPACK_IMPORTED_MODULE_30__["ManagerSubordinatesListComponent"],
             ],
             imports: [
                 // Angular imports
@@ -1245,7 +1251,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Manager Editor</h2>\n  <form (ngSubmit)=\"onSubmit()\" #managerForm=\"ngForm\">\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"idLabel\">ID</label>\n      <input type=\"text\" class=\"form-control\" id=\"id\" aria-describedby=\"idLabel\" [(ngModel)]=\"manager.id\" name=\"id\"\n        #id=\"ngModel\" readonly>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"name\" id=\"nameLabel\">Manager Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"nameLabel\" minlength=\"4\" maxlength=\"60\"\n        required [(ngModel)]=\"manager.name\" name=\"name\" #name=\"ngModel\">\n      <div *ngIf=\"name.invalid && (name.dirty || name.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"name.errors.required\">Manager Name is required.</div>\n        <div *ngIf=\"name.errors.minlength\">Manager Name must be at least 4 characters long.</div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"phone\" id=\"phoneLabel\">Manager Phone</label>\n      <input type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phoneLabel\" maxlength=\"12\" required\n        [(ngModel)]=\"manager.phone\" name=\"phone\" #phone=\"ngModel\">\n      <div *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"phone.errors.required\">Manager Phone is required.</div>\n      </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"image\" id=\"imageLabel\">Image</label>\n      <input type=\"file\" (change)=\"onFileSelected($event)\" class=\"form-control\" id=\"image\"\n        aria-describedby=\"imageLabel\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"bossManager\" id=\"bossManagerLabel\">Boss Manager</label>\n      <select class=\"custom-select\" [(ngModel)]=\"selectedBossManagerId\" id=\"bossManager\" aria-describedby=\"bossManagerLabel\"\n        #product=\"ngModel\" [ngModelOptions]=\"{standalone: true}\">\n        <option *ngFor=\"let bossManager of bossManagers\" [ngValue]=\"bossManager.id\">{{bossManager.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Cancel group\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onCancel()\">Back</button>\n      </div>\n      <div class=\"btn-group mr-4\" role=\"group\" aria-label=\"Save group\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n      </div>\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"existed && !manager.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onDelete()\">Delete</button>\n      </div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"Purge group\" *ngIf=\"existed && manager.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onUndelete()\">Undelete</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=\"onPurge()\">Purge</button>\n      </div>\n    </div>\n  </form>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Manager Editor</h2>\n  <form (ngSubmit)=\"onSubmit()\" #managerForm=\"ngForm\">\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"idLabel\">ID</label>\n      <input type=\"text\" class=\"form-control\" id=\"id\" aria-describedby=\"idLabel\" [(ngModel)]=\"manager.id\" name=\"id\"\n        #id=\"ngModel\" readonly>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"name\" id=\"nameLabel\">Manager Name</label>\n      <input type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"nameLabel\" minlength=\"4\" maxlength=\"60\"\n        required [(ngModel)]=\"manager.name\" name=\"name\" #name=\"ngModel\">\n      <div *ngIf=\"name.invalid && (name.dirty || name.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"name.errors.required\">Manager Name is required.</div>\n        <div *ngIf=\"name.errors.minlength\">Manager Name must be at least 4 characters long.</div>\n      </div>\n    </div>\n    <div class=\"form-group\">\n      <label for=\"phone\" id=\"phoneLabel\">Manager Phone</label>\n      <input type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phoneLabel\" maxlength=\"12\" required\n        [(ngModel)]=\"manager.phone\" name=\"phone\" #phone=\"ngModel\">\n      <div *ngIf=\"phone.invalid && (phone.dirty || phone.touched)\" class=\"alert alert-danger\">\n        <div *ngIf=\"phone.errors.required\">Manager Phone is required.</div>\n      </div>\n    </div>\n\n    <div class=\"form-group\" *ngIf='existed'>\n      <label for=\"image\" id=\"imageLabel\">Image</label>\n      <input type=\"file\" (change)=\"onFileSelected($event)\" class=\"form-control\" id=\"image\"\n        aria-describedby=\"imageLabel\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"bossManager\" id=\"bossManagerLabel\">Boss Manager</label>\n      <select class=\"custom-select\" [(ngModel)]=\"selectedBossId\" id=\"bossManager\" aria-describedby=\"bossManagerLabel\"\n        #bossManager=\"ngModel\" [ngModelOptions]=\"{standalone: true}\">\n        <option *ngFor=\"let bossManager of bossManagers\" [ngValue]=\"bossManager.id\">{{bossManager.name}}</option>\n      </select>\n    </div>\n\n    <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Cancel group\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"onCancel()\">Back</button>\n      </div>\n      <div class=\"btn-group mr-4\" role=\"group\" aria-label=\"Save group\">\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n      </div>\n      <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"existed && !manager.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onDelete()\">Delete</button>\n      </div>\n      <div class=\"btn-group\" role=\"group\" aria-label=\"Purge group\" *ngIf=\"existed && manager.isDeleted\">\n        <button type=\"button\" class=\"btn btn-warning\" (click)=\"onUndelete()\">Undelete</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=\"onPurge()\">Purge</button>\n      </div>\n    </div>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1290,14 +1296,18 @@ var ManagerFormComponent = /** @class */ (function () {
         this.route.params.subscribe(function (p) {
             if (p['id'] === undefined)
                 return;
+            _this.existed = true;
             _this.managerService.getManager(p['id']).subscribe(function (h) { return _this.manager = h; });
         });
-        this.existed = true;
-        this.curentManagerId = this.bossManagers.indexOf(this.manager);
-        this.bossManagers.splice(this.curentManagerId);
+        //this.deleteCurrentManager();
     };
     ManagerFormComponent.prototype.onFileSelected = function (event) {
         this.selectedImageFile = event.target.files[0];
+    };
+    ManagerFormComponent.prototype.deleteCurrentManager = function () {
+        var _this = this;
+        this.curentManagerId = this.bossManagers.findIndex(function (m) { return m.id == _this.manager.id; });
+        this.bossManagers.splice(this.curentManagerId);
     };
     ManagerFormComponent.prototype.navigateToManagers = function () {
         this.router.navigate(['/managers']);
@@ -1307,11 +1317,15 @@ var ManagerFormComponent = /** @class */ (function () {
     };
     ManagerFormComponent.prototype.onSubmit = function () {
         var _this = this;
+        if (this.selectedBossId) {
+            this.manager.parentId = this.selectedBossId;
+        }
         if (this.existed) {
-            this.managerService.updateManager(this.manager);
             if (this.selectedImageFile) {
-                this.managerService.uploadNewImageFile(this.manager.id, this.selectedImageFile).subscribe(function (h) { return _this.navigateToManagers(); });
+                this.managerService.uploadNewImageFile(this.manager.id, this.selectedImageFile).subscribe();
             }
+            this.managerService.updateManager(this.manager).
+                subscribe(function (s) { return _this.navigateToManagers(); });
         }
         else {
             this.managerService.addManager(this.manager).subscribe(function (h) { return _this.navigateToManagers(); });
@@ -1370,7 +1384,7 @@ module.exports = "img{\r\n    width: 200px;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h2>Manager List</h2>\n  <table class=\"table table-nonfluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Phone</th>\n      <th scope=\"col\">Image</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let manager of managers\">\n        <th scope=\"row\">{{manager.id}}</th>\n        <th scope=\"row\">{{manager.name}}</th>\n        <th scope=\"row\">{{manager.phone}}</th>\n        <th scope=\"row\"><img src= \"{{manager.photoUrl}}\" alt=\"photo\"></th>\n        <td>\n          <span class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Hive action buttons\"\n            style=\"display: block; white-space:nowrap;\">\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"!manager.isDeleted\"\n              (click)=\"onDelete(manager.id)\">\n              <button type=\"button\" class=\"btn btn-danger\">Delete</button>\n            </div>\n            <div *ngIf=\"manager.isDeleted\" class=\"btn-group mr-2\" role=\"group\" aria-label=\"Edit group\"\n              (click)=\"onRestore(manager.id)\">\n              <button type=\"button\" class=\"btn btn-primary\">Restore</button>\n            </div>\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"View group\">\n              <button routerLink=\"/managers\" type=\"button\" class=\"btn btn-primary\">View\n                sections</button>\n            </div>\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Edit group\">\n              <button routerLink=\"/manager/{{manager.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\n            </div>\n          </span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"New group\">\n      <button routerLink=\"/manager\" type=\"button\" class=\"btn btn-primary\">New Manager</button>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Manager List</h2>\n  <table class=\"table table-nonfluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Phone</th>\n      <th scope=\"col\">Image</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let manager of managers\">\n        <th scope=\"row\">{{manager.id}}</th>\n        <th scope=\"row\">{{manager.name}}</th>\n        <th scope=\"row\">{{manager.phone}}</th>\n        <th scope=\"row\"><img src= \"{{manager.photoUrl}}\" alt=\"photo\"></th>\n        <td>\n          <span class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Hive action buttons\"\n            style=\"display: block; white-space:nowrap;\">\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"!manager.isDeleted\"\n              (click)=\"onDelete(manager.id)\">\n              <button type=\"button\" class=\"btn btn-danger\">Delete</button>\n            </div>\n            <div *ngIf=\"manager.isDeleted\" class=\"btn-group mr-2\" role=\"group\" aria-label=\"Edit group\"\n              (click)=\"onRestore(manager.id)\">\n              <button type=\"button\" class=\"btn btn-primary\">Restore</button>\n            </div>\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"View group\">\n              <button routerLink=\"/manager/{{manager.id}}/subordinates\" type=\"button\" class=\"btn btn-primary\">View\n                manager subordinates</button>\n            </div>\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Edit group\">\n              <button routerLink=\"/manager/{{manager.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\n            </div>\n          </span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"New group\">\n      <button routerLink=\"/manager\" type=\"button\" class=\"btn btn-primary\">New Manager</button>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1426,6 +1440,93 @@ var ManagerListComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_manager_service__WEBPACK_IMPORTED_MODULE_1__["ManagerService"]])
     ], ManagerListComponent);
     return ManagerListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/manager-control/lists/manager-subordinates-list.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/manager-control/lists/manager-subordinates-list.component.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "img{\r\n    width: 500px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/manager-control/lists/manager-subordinates-list.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/manager-control/lists/manager-subordinates-list.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h2>Manager Subordinates List</h2>\n  <table class=\"table table-nonfluid\">\n    <thead>\n      <th scope=\"col\">#</th>\n      <th scope=\"col\">Name</th>\n      <th scope=\"col\">Phone</th>\n      <th scope=\"col\">Image</th>\n      <th scope=\"col\"></th>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let manager of managers\">\n        <th scope=\"row\">{{manager.id}}</th>\n        <th scope=\"row\">{{manager.name}}</th>\n        <th scope=\"row\">{{manager.phone}}</th>\n        <th scope=\"row\"><img src= \"{{manager.photoUrl}}\" alt=\"photo\"></th>\n        <td>\n          <span class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Hive action buttons\"\n            style=\"display: block; white-space:nowrap;\">\n            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"!manager.isDeleted\"\n              (click)=\"onDelete(manager.id)\">\n              <button type=\"button\" class=\"btn btn-danger\">Delete</button>\n            </div>\n            <div *ngIf=\"manager.isDeleted\" class=\"btn-group mr-2\" role=\"group\" aria-label=\"Edit group\"\n              (click)=\"onRestore(manager.id)\">\n              <button type=\"button\" class=\"btn btn-primary\">Restore</button>\n            </div>\n            <!-- <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"View group\">\n              <button routerLink=\"/manager/{{manager.id}}/subordinates\" type=\"button\" class=\"btn btn-primary\">View\n                manager subordinates</button>\n            </div> -->\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Edit group\">\n              <button routerLink=\"/manager/{{manager.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\n            </div>\n          </span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Action buttons\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"Back group\">\n      <button routerLink=\"/managers\" type=\"button\" class=\"btn btn-primary\">Back to managers</button>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/manager-control/lists/manager-subordinates-list.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/manager-control/lists/manager-subordinates-list.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: ManagerSubordinatesListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagerSubordinatesListComponent", function() { return ManagerSubordinatesListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_manager_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/manager.service */ "./src/app/manager-control/services/manager.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ManagerSubordinatesListComponent = /** @class */ (function () {
+    function ManagerSubordinatesListComponent(route, managerService) {
+        this.route = route;
+        this.managerService = managerService;
+    }
+    ManagerSubordinatesListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (p) {
+            _this.boosManagerId = p['id'];
+        });
+        this.managerService.getManagerSubordinates(this.boosManagerId).subscribe(function (m) { return _this.managers = m; });
+    };
+    ManagerSubordinatesListComponent.prototype.onDelete = function (managerId) {
+        var manager = this.managers.find(function (h) { return h.id == managerId; });
+        if (manager) {
+            this.managerService.setManagerStatus(managerId, true).subscribe(function (c) { return manager.isDeleted = true; });
+        }
+    };
+    ManagerSubordinatesListComponent.prototype.onRestore = function (managerId) {
+        var manager = this.managers.find(function (h) { return h.id == managerId; });
+        if (manager) {
+            this.managerService.setManagerStatus(managerId, true).subscribe(function (c) { return manager.isDeleted = false; });
+        }
+    };
+    ManagerSubordinatesListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-manager-list',
+            template: __webpack_require__(/*! ./manager-subordinates-list.component.html */ "./src/app/manager-control/lists/manager-subordinates-list.component.html"),
+            styles: [__webpack_require__(/*! ./manager-subordinates-list.component.css */ "./src/app/manager-control/lists/manager-subordinates-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _services_manager_service__WEBPACK_IMPORTED_MODULE_1__["ManagerService"]])
+    ], ManagerSubordinatesListComponent);
+    return ManagerSubordinatesListComponent;
 }());
 
 
@@ -1513,6 +1614,9 @@ var ManagerService = /** @class */ (function () {
         var fd = new FormData();
         fd.append('image', file, file.name);
         return this.http.post(this.url + "/" + managerId + "/uploadImage", fd);
+    };
+    ManagerService.prototype.getManagerSubordinates = function (managerId) {
+        return this.http.get(this.url + "/" + managerId + "/subordinates");
     };
     ManagerService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -2466,7 +2570,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Product List</h2>\r\n  <table class=\"table table-nofluid\">\r\n    <thead>\r\n      <th scope=\"col\">#</th>\r\n      <th scope=\"col\">Code</th>\r\n      <th scope=\"col\">Name</th>\r\n      <th scope=\"col\">Category</th>\r\n      <th scope=\"col\">Last Update</th>\r\n      <th scope=\"col\"></th>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let product of products\">\r\n        <th scope=\"row\">{{product.id}}</th>\r\n        <td>{{product.code}}</td>\r\n        <td>{{product.name}}</td>\r\n        <td>{{product.categoryCode}}</td>\r\n        <td>{{product.lastUpdated}}</td>\r\n        <td>\r\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\r\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"product.isDeleted\">\r\n              <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\r\n            </div>\r\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\r\n              <button routerLink=\"/category/{{product.categoryId}}/products\" type=\"button\" class=\"btn btn-primary\">View category products</button>\r\n            </div>\r\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Edit group\">\r\n              <button routerLink=\"/product/{{product.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\r\n            </div>\r\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Ordere product\">\r\n              <button routerLink=\"/order\" type=\"button\" class=\"btn btn-primary\">Order Product</button>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"container\">\r\n  <h2>Product List</h2>\r\n  <table class=\"table table-nofluid\">\r\n    <thead>\r\n      <th scope=\"col\">#</th>\r\n      <th scope=\"col\">Code</th>\r\n      <th scope=\"col\">Name</th>\r\n      <th scope=\"col\">Category</th>\r\n      <th scope=\"col\">Last Update</th>\r\n      <th scope=\"col\"></th>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let product of products\">\r\n        <th scope=\"row\">{{product.id}}</th>\r\n        <td>{{product.code}}</td>\r\n        <td>{{product.name}}</td>\r\n        <td>{{product.categoryCode}}</td>\r\n        <td>{{product.lastUpdated}}</td>\r\n        <td>\r\n          <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Product action buttons\">\r\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"Delete group\" *ngIf=\"product.isDeleted\">\r\n              <button type=\"button\" class=\"btn btn-warning\">Deleted</button>\r\n            </div>\r\n            <div class=\"btn-group mr-1\" role=\"group\" aria-label=\"View category group\">\r\n              <button routerLink=\"/category/{{product.categoryId}}/products\" type=\"button\" class=\"btn btn-primary\">View category products</button>\r\n            </div>\r\n            <div class=\"btn-group\" role=\"group\" aria-label=\"Edit group\">\r\n              <button routerLink=\"/product/{{product.id}}\" type=\"button\" class=\"btn btn-primary\">Edit</button>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -2715,8 +2819,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var environment = {
     production: false,
-    //apiUrl: 'https://katla-sport-back-end.azurewebsites.net/',
-    apiUrl: 'http://localhost:56952/'
+    apiUrl: 'https://katla-sport-back-end.azurewebsites.net/',
 };
 
 
